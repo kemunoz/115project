@@ -5,6 +5,7 @@
   position: static;
   background: #232323;
   display: block;
+  margin-left: 10%;
 }
 
 .mainTitle {
@@ -53,8 +54,36 @@
 }
 
 .flexbox2 {
-  padding-top: 20px;
+  padding-top: 30px;
   margin-left: 60px;
   margin-right: 60px;
   display: flex;
 }
+
+/*Buttons*/
+
+.navButton, .chatButton {
+    background-color: #1c1f23;
+    border: 2px solid #e8e8e8;
+    color: #e8e8e8;
+    padding: 15px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 7px;
+    cursor: pointer;
+}
+
+.navButton:hover {
+  color: blue;
+  border-color: blue;
+
+}
+
+.chatButton:hover {
+  color: blue;
+  border-color: blue;
+}
+
+

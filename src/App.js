@@ -12,6 +12,7 @@ class App extends Component {
         <div className="banner">
           <div className="flexbox">
             <div className="title">Qvinyl</div>
+            
             <div className="settings">Settings</div>
           </div>
         </div>

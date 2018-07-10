@@ -1,9 +1,30 @@
-.sidenav{
+#sidenav{
   width:20%;
   height: 100vh;
-  position: static;
+  /*sliding*/
+  position: fixed;
+  left:0;
+  top:0;
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+  z-index: 1;
+
   background: #3a3a3a;
   display: block;
+}
+
+#sidenav.hide {
+  transform: translate3d(-30vw, 0, 0);
+}
+
+#sidenav.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+}
+
+.roomTitle {
+  margin-top: 120px;
+  font-size: 20px;
+  color: white;
 }
 
 .table1 {
@@ -25,7 +46,7 @@
 }
 
 .searchroom {
-  margin-top: 120px;
+  margin-top: 30px;
 }
 
 .plus {

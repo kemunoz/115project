@@ -1,9 +1,22 @@
-.chatbar {
+#chatbar {
   width:20%;
   height: 100vh;
-  position: static;
+  position: fixed;
   background: #3a3a3a;
   display: block;
+  right:0;
+  top:0;
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+  z-index: 1;
+}
+
+#chatbar.hide {
+  transform: translate3d(30vw, 0, 0);
+}
+
+#chatbar.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
 }
 
 .textbox {
@@ -25,3 +38,6 @@
   font-size: 20px;
   color: white;
 }
+
+
+

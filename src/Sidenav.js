@@ -2,9 +2,16 @@ import React, { Component } from 'react'
 // import ReactPlayer from 'react-player'
 import './Sidenav.css';
 class Sidenav extends Component {
-  constructor() {
-    super();
- }
+  constructor(props, context) {
+    super(props, context);
+
+  };
+ 
+
+
+
+
+
  addRoom() {
   // alert("Add room was pressed");
   var x = document.getElementById("addbox");
@@ -31,8 +38,17 @@ class Sidenav extends Component {
  }
 
   render () {
+
+    var sidenav_visibility = "hide";
+
+    if (this.props.menuVisibility) {
+      sidenav_visibility = "show";
+    }
+
     return (
-      <div className="sidenav">
+      
+      <div id="sidenav" onMouseDown={this.props.handleMouseDown} className={sidenav_visibility}>
+      <div className="roomTitle">Room Selection</div>
         <div className="searchroom">
           <i className="fas fa-plus-circle plus" id="plus" onClick={()=> this.addRoom()}></i>
           <input className="inlink" type="text" name="name" id="room" onChange={()=>this.searchRoom()}/>
