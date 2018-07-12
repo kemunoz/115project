@@ -62,35 +62,18 @@ class Sidenav extends Component {
             Room password:
           </label>
           <input className="inlink"/>
-        </div>
+        </div> 
         <div className="sidescrollbox">
           <table className="table1" id="roomList">
+          
             <tr>
-              <td className="td1"> Audio room </td>
+              <td className="td1"> Audio room <i className="fas fa-circle online"></i> </td>
             </tr>
             <tr>
-              <td className="td1"> Study Music room </td>
+              <td className="td1"> Study Music room <i className="fas fa-circle online"></i> </td>
             </tr>
             <tr>
-              <td className="td1"> Alternative room </td>
-            </tr>
-            <tr>
-              <td className="td1"> Friends room </td>
-            </tr>
-            <tr>
-              <td className="td1"> Audio room </td>
-            </tr>
-            <tr>
-              <td className="td1"> Audio room </td>
-            </tr>
-            <tr>
-              <td className="td1"> Audio room </td>
-            </tr>
-            <tr>
-              <td className="td1"> Study Music room </td>
-            </tr>
-            <tr>
-              <td className="td1"> Alternative room </td>
+              <td className="td1"> Alternative room <i className="fas fa-circle online"></i> </td>
             </tr>
             <tr>
               <td className="td1"> Friends room </td>
@@ -156,6 +139,24 @@ class Sidenav extends Component {
               <td className="td1"> Audio room </td>
             </tr>
             <tr>
+              <td className="td1"> Audio room </td>
+            </tr>
+            <tr>
+              <td className="td1"> Study Music room </td>
+            </tr>
+            <tr>
+              <td className="td1"> Alternative room </td>
+            </tr>
+            <tr>
+              <td className="td1"> Friends room </td>
+            </tr>
+            <tr>
+              <td className="td1"> Audio room </td>
+            </tr>
+            <tr>
+              <td className="td1"> Audio room </td>
+            </tr>
+            <tr>
               <td className="td1"> Study Music room </td>
             </tr>
             <tr>
@@ -200,6 +201,7 @@ class Sidenav extends Component {
             <tr>
               <td className="td1"> Friends room </td>
             </tr>
+           
           </table>
         </div>
       </div>

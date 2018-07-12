@@ -40,7 +40,9 @@
   margin: auto;
 }
 
-.td1:hover {
+
+
+.td1:hover{
 	color: #0078ce;
   background-color: #262626;
 }
@@ -63,7 +65,7 @@
   overflow: auto;
   margin-left: 24px;
   margin-right: 24px;
-  margin-top: 10px;
+  margin-top: 200px; /*10px original*/
   height: 82%;
   width: 85%;
 }
@@ -80,4 +82,23 @@
   width: 160px;
   height: 20px;
   font-size: 16px;
+}
+
+.online {
+  color:#0078ce;
+}
+
+i {
+  float: right;
+}
+
+.onlineDot {
+  margin-bottom: 10px;
+  text-indent: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  margin: auto;
+
 }
