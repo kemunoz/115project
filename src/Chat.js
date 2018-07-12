@@ -49,7 +49,7 @@ class Chat extends React.Component {
 
         return (
 	            <div className="chatroom">
-		                <h3>Chilltime</h3>
+		                <h3>Chatroom</h3>
 		                <ul className="chats" ref="chats">
 		                    {
 		                        chats.map((chat) => 
