@@ -16,6 +16,11 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
+function logout(){
+  firebase.auth().signOut();
+}
+
 // const preObject = document.getElementById('object');
 //
 // const dbRefObject = firebase.database().ref().child('URLS');
@@ -25,12 +30,20 @@ firebase.initializeApp(config);
 class App extends Component {
   render () {
     return (
-      <div className="app">
+
+
+
+
+
+
+
+
+<div className="app">
         <div className="banner">
           <div className="flexbox">
             <div className="title">Qvinyl</div>
             <pre id="object"></pre>
-            <div className="settings">Settings</div>
+            <button onClick="logout()" className="settings">Logout</button>
           </div>
         </div>
         <div className="flexbox">
@@ -38,9 +51,23 @@ class App extends Component {
           <Main />
           <Chat />
         </div>
-      </div>
+</div>
+
+
+
+
+
+
+
+
+
+      
     );
   }
 }
 
 export default App;
+
+//
+
+

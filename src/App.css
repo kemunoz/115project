@@ -27,13 +27,32 @@ body {
   margin-left: 40px;
 }
 
-.settings {
-  color: white;
+button {
+  color: #e8e8e8;
   font-size: 16px;
+  height:80%;
+  /*background:transparent;*/
+  margin:transparent;
   margin-left: 73%;
   margin-top: 40px;
+
+
+
+
+  background-color: #1c1f23;
+    border: 2px solid #e8e8e8;
+    color: #e8e8e8;
+    padding: 15px 22px;
+    
+    text-decoration: none;
+    display: inline-block;
+    
+    cursor: pointer;
 }
 
 .settings:hover {
   color: #0078ce;
 }
+
+
+
