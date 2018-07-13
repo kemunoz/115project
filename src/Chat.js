@@ -5,8 +5,8 @@ import './Chat.css';
 import Message from './Message.js';
 
 class Chat extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
 
         this.state = {
             chats: [{
@@ -16,6 +16,7 @@ class Chat extends React.Component {
 
         this.submitMessage = this.submitMessage.bind(this);
     }
+
 
     componentDidMount() {
         this.scrollToBot();
@@ -44,11 +45,21 @@ class Chat extends React.Component {
     }
 
     render() {
+
+        var chat_visibility = "hide";
+
+        if (this.props.menuVisibility) {
+            chat_visibility = "show";
+        }
+
+
         const username = "User";
         const { chats } = this.state;
 
         return (
-	            <div className="chatroom">
+ 
+	            <div id="chatroom" onMouseDown={this.props.handleMouseDown}
+       className={chat_visibility}>
 		                <h3>Chatroom</h3>
 		                <ul className="chats" ref="chats">
 		                    {
@@ -58,13 +69,13 @@ class Chat extends React.Component {
 		                    }
 		                </ul>
 		                
+        
 
 
 
 
 
-
-		        <div className="chatbar">
+		      
 		        
 		        <div className="messagebox">
 		        </div>
@@ -74,7 +85,7 @@ class Chat extends React.Component {
 		                    <input type="submit" value="Submit" />
 		        </form>
 
-		      </div>
+		      
 
 
 

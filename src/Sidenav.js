@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 // import ReactPlayer from 'react-player'
 import './Sidenav.css';
 class Sidenav extends Component {
-  constructor() {
-    super();
- }
+  constructor(props, context) {
+    super(props, context);
+ };
+
+
  addRoom() {
   // alert("Add room was pressed");
   var x = document.getElementById("addbox");
@@ -31,8 +33,17 @@ class Sidenav extends Component {
  }
 
   render () {
+
+    var sidenav_visibility = "hide";
+
+    if (this.props.menuVisibility) {
+      sidenav_visibility = "show";
+    }
+
+
     return (
-      <div className="sidenav">
+      <div id="sidenav" onMouseDown={this.props.handleMouseDown} className={sidenav_visibility}>
+        <div className="roomTitle">Room Selection</div>
         <div className="searchroom">
           <i className="fas fa-plus-circle plus" id="plus" onClick={()=> this.addRoom()}></i>
           <input className="inlink" type="text" name="name" id="room" onChange={()=>this.searchRoom()}/>
@@ -50,13 +61,13 @@ class Sidenav extends Component {
         <div className="sidescrollbox">
           <table className="table1" id="roomList">
             <tr>
-              <td className="td1"> Audio room </td>
+              <td className="td1"> Audio room <i className="fas fa-circle online"></i>  </td>
             </tr>
             <tr>
-              <td className="td1"> Study Music room </td>
+              <td className="td1"> Study Music room <i className="fas fa-circle online"></i>  </td>
             </tr>
             <tr>
-              <td className="td1"> Alternative room </td>
+              <td className="td1"> Alternative room <i className="fas fa-circle online"></i>  </td>
             </tr>
             <tr>
               <td className="td1"> Friends room </td>

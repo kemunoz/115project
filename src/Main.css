@@ -5,6 +5,7 @@
   position: static;
   background: #232323;
   display: block;
+  margin-left: 10%;
 }
 
 .mainTitle {
@@ -13,6 +14,7 @@
   color: white;
   font-weight: bold;
   padding: 10px;
+  text-align: center;
 }
 
 .inputcontainer{
@@ -59,4 +61,31 @@
   margin-left: 60px;
   margin-right: 60px;
   display: flex;
+}
+
+/*Buttons*/
+
+.navButton, .chatButton {
+    background-color: #1c1f23;
+    border: 2px solid #e8e8e8;
+    color: #e8e8e8;
+    padding: 15px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 7px;
+    cursor: pointer;
+    height:5%;
+}
+
+.navButton:hover {
+  color: #0078ce;
+  border-color: #0078ce;
+
+}
+
+.chatButton:hover {
+  color: #0078ce;
+  border-color: #0078ce;
 }

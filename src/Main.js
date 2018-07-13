@@ -2,15 +2,44 @@ import React, { Component } from 'react'
 import ReactPlayer from 'react-player'
 import Queue from './Queue'
 import Info from './Info'
+import Sidenav from './Sidenav'
+import Chat from './Chat'
 import Player from './Player'
 import './Main.css';
 import firebase from 'firebase'
 
 
 class Main extends Component {
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      menuVisible: false,
+      chatVisible: false
+    };
+
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
+
   }
+
+  handleMouseDown(e) {
+    this.toggleMenu();
+    e.stopPropagation();
+  }
+
+  toggleMenu() {
+    this.setState ({
+      menuVisible: !this.state.menuVisible
+    })
+  }
+
+  toggleChat() {
+    this.setState({
+    chatVisible: !this.state.chatVisible
+  })
+  }
+
 
   pushToDB() {
     var database = firebase.database();
@@ -29,6 +58,18 @@ class Main extends Component {
     return (
       <div className="main">
         <div className="mainTitle">Audio Room</div>
+
+      {/*Toggle the Rooms and Chat tabs*/}
+            <button className="navButton" onClick={this.toggleMenu.bind(this)}>
+            Room Selection
+          </button>
+          <Sidenav menuVisibility={this.state.menuVisible}/> 
+          <button className="button chatButton" onClick={this.toggleChat.bind(this)}>
+            Chat Room
+          </button>
+           <Chat menuVisibility={this.state.chatVisible}/>
+
+
         <div className="trackplayinginfo">
           <div className="flexbox2">
             <div className="videoplayer">
