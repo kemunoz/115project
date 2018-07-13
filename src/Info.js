@@ -1,6 +1,20 @@
 import React, { Component } from 'react'
 import "./Info.css"
 class Info extends Component {
+
+    constructor(props) {
+    super(props);
+    this.state = {clicks: 0}
+  }
+
+  handleClick() {
+    this.setState((prevState) => ({
+        clicks: prevState.clicks + 1
+    }));
+
+  
+  }
+  
   render () {
     return (
         <div className="infobox">
@@ -9,7 +23,15 @@ class Info extends Component {
             <div>
               <div className="vetobox">
                 <div className="vetotext">Veto</div>
+                
+
+                <span className="counter" onClick={this.handleClick.bind(this)}> <span className="count">{this.state.clicks} </span> 
+
                 <i className="fas fa-thumbs-down thumbsi"></i>
+                </span>
+
+
+
               </div>
               <table className="table2">
                 <tr>
