@@ -17,9 +17,13 @@ var config = {
 firebase.initializeApp(config);
 
 
-function logout(){
-  firebase.auth().signOut();
-}
+
+// function logout(){
+
+              
+// }
+
+
 
 // const preObject = document.getElementById('object');
 //
@@ -43,7 +47,13 @@ class App extends Component {
           <div className="flexbox">
             <div className="title">Qvinyl</div>
             <pre id="object"></pre>
-            <button onClick="logout()" className="settings">Logout</button>
+
+
+            
+            
+            
+            <a href="login.html" className="button"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+            
           </div>
         </div>
         <div className="flexbox">
@@ -68,6 +78,6 @@ class App extends Component {
 
 export default App;
 
-//
+//<button onClick="logout" className="settings" id="signOut">Logout</button>
 
 

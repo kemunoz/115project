@@ -1,6 +1,8 @@
-import React from 'react';
+//import React from 'react';
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import './Chat.css';
+import firebase from 'firebase';
 
 import Message from './Message.js';
 
@@ -9,6 +11,7 @@ class Chat extends React.Component {
         super(props, context);
 
         this.state = {
+
             chats: [{
      			//nothing so far. updates each time.
             }]
@@ -30,19 +33,65 @@ class Chat extends React.Component {
         ReactDOM.findDOMNode(this.refs.chats).scrollTop = ReactDOM.findDOMNode(this.refs.chats).scrollHeight;
     }
 
-    submitMessage(e) {
-        e.preventDefault();
 
+
+
+
+
+
+
+    submitMessage(e) {
+        // var userID = firebase.auth().currentUser.uid;
+     // var userRoomKey = firebase.database().ref('users/' + userID + '/roomKeys');
+
+
+     
+
+        e.preventDefault();
+        var userMessage = document.getElementById("currentMessage").value;
         this.setState({
+
+
             chats: this.state.chats.concat([{
-                username: "User",
-                content: <p>{ReactDOM.findDOMNode(this.refs.msg).value}</p>,
+
+
                 
+                username: "User",
+                content: <p>{ReactDOM.findDOMNode(this.refs.msg).value}</p>,    
+                
+ 
+               
             }])
         }, () => {
             ReactDOM.findDOMNode(this.refs.msg).value = "";
+
+
         });
+
+
+
+        var userID = firebase.auth().currentUser.uid;
+        var userRoomKey = firebase.database().ref('users/' + userID + '/roomKeys');
+        userRoomKey.once('value').then(function(snapshot) {
+            console.log("userID: " + userID);
+            var roomKey = snapshot.val().currentRoom;
+            console.log("RoomKey: " + roomKey)
+            var chatbase = firebase.database().ref('rooms/' + roomKey + '/chats');
+            chatbase.push({
+                message: userMessage,
+                user: userID,
+            })
+        });
+     
+     
+     
     }
+
+
+
+
+
+
 
     render() {
 
@@ -81,7 +130,7 @@ class Chat extends React.Component {
 		        </div>
 
 		        <form className="input" onSubmit={(e) => this.submitMessage(e)}>
-		                    <input type="text" ref="msg" />
+		                    <input id="currentMessage" type="text" ref="msg" />
 		                    <input type="submit" value="Submit" />
 		        </form>
 
