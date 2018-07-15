@@ -18,10 +18,9 @@ firebase.initializeApp(config);
 
 
 
-// function logout(){
-
-              
-// }
+function logoutButton(){
+    firebase.auth().signOut();
+}
 
 
 
@@ -35,7 +34,7 @@ class App extends Component {
   render () {
     return (
 
-
+            
 
 
 
@@ -50,9 +49,9 @@ class App extends Component {
 
 
             
+<a href="login.html" onClick={logoutButton} className="button"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
             
-            
-            <a href="login.html" className="button"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+                
             
           </div>
         </div>
@@ -79,5 +78,7 @@ class App extends Component {
 export default App;
 
 //<button onClick="logout" className="settings" id="signOut">Logout</button>
+//
+// 
 
 
